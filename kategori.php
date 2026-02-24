@@ -1,3 +1,7 @@
+<?php  
+session_start();
+include 'koneksi.php';
+?>
 <div class="container-fluid">
 
                     <!-- Page Heading -->
@@ -25,9 +29,8 @@
                                         </tr>
                                     </thead>
                                     <tfoot>
-                                          <tr>
-                                        <?php if ($_SESSION['user']['level'] == 'admin') : ?>
-                                      
+                                        <tr>
+                                            <?php if (isset($_SESSION['user']['level']) && $_SESSION['user']['level'] == 'admin') : ?>
                                             <th>Aksi</th>
                                             <?php endif; ?>
                                         </tr>
